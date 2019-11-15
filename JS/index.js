@@ -3,12 +3,22 @@ const guideList = document.querySelector('.guides');
 
 const TeachersList = document.querySelector('.Teachers');
 
+
+var ib_code;
+
+//console.log(FirebaseAuth.getInstance().getCurrentUser());
 // setup guides
 const setupGuides = (data) => {
 
   let html = '';
   data.forEach(doc => {
     const students = doc.data();
+    //var check = parseInt(${students.MIS}/1000) - 110000;
+    //console.log(check);
+    //console.log(students.MIS);
+    var test = students.MIS;
+    //console.log(parseInt(test/1000)-110000);
+    ib_code=parseInt(test/1000)-110000;
     const li = `
       <li>
         <div class="collapsible-header grey lighten-4"> ${students.Name} </div>
@@ -27,6 +37,11 @@ const setupTeachers = (data) => {
   let ktml = '';
   data.forEach(doc => {
     const Teachers = doc.data();
+    //var check = parseInt(${students.MIS}/1000) - 110000;
+    if(Teachers.b_code==1715)
+    {
+    //if(Teachers.b_code==check)
+    //{
     const li = `
       <li>
         <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div>
@@ -35,6 +50,8 @@ const setupTeachers = (data) => {
       </li>
     `;
     ktml += li;
+  //}
+  }
   });
   TeachersList.innerHTML = ktml
 
