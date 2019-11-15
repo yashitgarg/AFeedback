@@ -1,16 +1,19 @@
 // DOM elements
-const guideList = document.querySelector('.students');
+const guideList = document.querySelector('.guides');
+
+const TeachersList = document.querySelector('.Teachers');
 
 // setup guides
 const setupGuides = (data) => {
 
   let html = '';
   data.forEach(doc => {
-    const guide = doc.data();
+    const students = doc.data();
     const li = `
       <li>
-        <div class="collapsible-header grey lighten-4"> ${guide.title} </div>
-        <div class="collapsible-body white"> ${guide.content} </div>
+        <div class="collapsible-header grey lighten-4"> ${students.Name} </div>
+        <div class="collapsible-body white"> ${students.MIS} </div>
+        <div class="collapsible-body white"> ${students.Email} </div>
       </li>
     `;
     html += li;
@@ -21,18 +24,19 @@ const setupGuides = (data) => {
 
 const setupTeachers = (data) => {
 
-  let html = '';
+  let ktml = '';
   data.forEach(doc => {
-    const guide = doc.data();
+    const Teachers = doc.data();
     const li = `
       <li>
-        <div class="collapsible-header grey lighten-4"> ${guide.title} </div>
-        <div class="collapsible-body white"> ${guide.content} </div>
+        <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div>
+        <div class="collapsible-body white"> ${Teachers.course} </div>
+        
       </li>
     `;
-    html += li;
+    ktml += li;
   });
-  guideList.innerHTML = html
+  TeachersList.innerHTML = ktml
 
 };
 

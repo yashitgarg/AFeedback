@@ -1,6 +1,7 @@
 db.collection('students').get().then(snapshot => {
   setupGuides(snapshot.docs);
 });
+
 db.collection('Teachers').get().then(snapshot => {
   setupTeachers(snapshot.docs);
 });
