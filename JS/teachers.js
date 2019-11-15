@@ -12,7 +12,7 @@ db.collection('students').get().then(snapshot => {
   
       var logtout =  function(){
           firebase.auth().signOut().then(function(){
-              console.log('success');
+              //console.log('success');
               window.location.replace("login.html");
           },function(){})
       }
@@ -74,7 +74,7 @@ const setupGuides = (data) => {
     if(take==cuser.email)
     {
         var test = students.MIS;
-        //console.log(test);
+       // console.log(students.MIS);
         ib_code=parseInt(test/1000)-110000;
     }
     //var check = parseInt(${students.MIS}/1000) - 110000;
@@ -102,8 +102,9 @@ const setupTeachers = (data) => {
     //var check = parseInt(${students.MIS}/1000) - 110000;
     if(Teachers.b_code==ib_code)
     {
-    //if(Teachers.b_code==check)
+    //if(Teachers.b-code==check)
     //{
+       // console.log(ib_code);
     const li = `
       <li>
         <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div>
@@ -113,7 +114,7 @@ const setupTeachers = (data) => {
     `;
     ktml += li;
   //}
-  }
+    }
   });
   TeachersList.innerHTML = ktml
 
