@@ -3,7 +3,6 @@ const guideList = document.querySelector('.guides');
 
 const TeachersList = document.querySelector('.Teachers');
 
-
 var ib_code;
 
 //console.log(FirebaseAuth.getInstance().getCurrentUser());
@@ -38,7 +37,7 @@ const setupTeachers = (data) => {
   data.forEach(doc => {
     const Teachers = doc.data();
     //var check = parseInt(${students.MIS}/1000) - 110000;
-    if(Teachers.b_code==1715)
+    if(Teachers.b_code==ib_code)
     {
     //if(Teachers.b_code==check)
     //{

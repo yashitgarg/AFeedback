@@ -18,7 +18,7 @@ var config = {
   db.settings({ timestampsInSnapshots: true });
 if(!hasInit){
     //firebase.initializeApp(config);
-    FirebaseAuth.initializeApp(config);
+    //FirebaseAuth.initializeApp(config);
     hasInit = true;
 }
 
