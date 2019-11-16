@@ -28,16 +28,22 @@ Enter your message here
     <script>
 
     function save_chat(){
-    
-    /*db.collection('chats').add({
-        MIS: 111715051,
+    var qs = window.location.search;
+    var search_params = new URLSearchParams(qs);
+    var id = parseInt(search_params.get('id'));
+    //console.log(id);
+
+    db.collection('chats').add({
+        MIS: user.MIS,
         Message: "fir aa gaya message",
         t2s: true,
-        t_id: 101,
-        timestamp: firebase.ServerValue.TIMESTAMP.toDate();
+        t_id: id,
+        timestamp: firebase.ServerValue.TIMESTAMP.toDate()
     })
-    */
-    console.log(firebase.database.ServerValue.TIMESTAMP;
+    
+    //console.log(firebase.database.ServerValue.TIMESTAMP;
+    //var mystr=window.location
+    
 }
 
     </script>   
@@ -45,11 +51,5 @@ Enter your message here
     
     <script src="fireBase.js"></script>
     <script src="teachers.js"></script>
-    <script> 
-        var x = tvalue;
-    //console.log(tvalue); 
-    console.log(x);
-    
-    </script>
 </body>
 </html>

@@ -108,7 +108,7 @@ const setupTeachers = (data) => {
        // console.log(ib_code);
     const li = `
       <li>
-        <a href = "chat.html" onclick = 'stvalue(${Teachers.t_id})'> <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div></a>
+        <a onclick = 'stvalue(${Teachers.t_id})'> <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div></a>
         <div class="collapsible-body white"> ${Teachers.course} </div>
         
       </li>
@@ -123,6 +123,7 @@ const setupTeachers = (data) => {
 
 function stvalue(data){
 tvalue = data;
+window.location="chat.html"+"?id="+tvalue;
 console.log(tvalue);
 }
 
