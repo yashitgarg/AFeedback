@@ -43,7 +43,7 @@ const setupTeachers = (data) => {
     //{
     const li = `
       <li>
-        <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div>
+        <a> <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div></a>
         <div class="collapsible-body white"> ${Teachers.course} </div>
         
       </li>

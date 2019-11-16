@@ -1,3 +1,4 @@
+var tvalue=1;
 db.collection('students').get().then(snapshot => {
     setupGuides(snapshot.docs);
   });
@@ -38,7 +39,7 @@ db.collection('students').get().then(snapshot => {
   var firebaseText=firebase.database().ref('students');
   firebaseText.on('value', gotData, errData);
   function gotData(data){
-    console.log(data);
+    //console.log(data);
   }
   
   function errData(err){
@@ -107,7 +108,7 @@ const setupTeachers = (data) => {
        // console.log(ib_code);
     const li = `
       <li>
-        <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div>
+        <a href = "chat.html" onclick = 'stvalue(${Teachers.t_id})'> <div class="collapsible-header grey lighten-4"> ${Teachers.Name} </div></a>
         <div class="collapsible-body white"> ${Teachers.course} </div>
         
       </li>
@@ -119,6 +120,11 @@ const setupTeachers = (data) => {
   TeachersList.innerHTML = ktml
 
 };
+
+function stvalue(data){
+tvalue = data;
+console.log(tvalue);
+}
 
 // setup materialize components
 /*document.addEventListener('DOMContentLoaded', function() {
