@@ -25,7 +25,7 @@ db.collection('students').get().then(snapshot => {
             //console.log(user.email);
 
             cuser=user;
-            //console.log(cuser.Email);
+            //console.log(cuser.email);
             mainContainer.style.display = "";
           } else {
             // No user is signed in.
