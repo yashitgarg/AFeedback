@@ -8,6 +8,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+
     
 </head>
 <body>
@@ -19,18 +20,39 @@
         <textarea rows="8" cols="100">
 Enter your message here
 </textarea>
-        <button>Send</button>
+        <button onclick="save_chat()">Send</button>
     </div>
-
-    <script src="fireBase.js"></script>
     
    <!--<script src="main.js"></script>-->
    <!--<script src="index.js"></script>-->
+    <script>
+
+    function save_chat(){
+    var database = firebase.database();
+    var ref = database.ref('chats');
+    var data= {
+        MIS: 111715051,
+        Message: "aa gaya message",
+        t2s: true,
+        t_id: 101,
+        timestamp: 0
+            }
+    ref.push(data);
+    //console.log(ref);
+    console.log(data);
+    //console.log(ref);
+}
+
+    </script>   
+
+    
+    <script src="fireBase.js"></script>
     <script src="teachers.js"></script>
     <script> 
         var x = tvalue;
     //console.log(tvalue); 
     console.log(x);
+    
     </script>
 </body>
 </html>
