@@ -16,7 +16,7 @@
     //console.log(semail.email); 
     //console.log(id);
     db.collection('chats').add({
-        EEmail: toString(semail.email),
+        EEmail: semail.email,
         Message: "6:54 ho rhe hain",
         t2s: true,
         t_id: id,
