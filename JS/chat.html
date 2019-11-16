@@ -28,19 +28,16 @@ Enter your message here
     <script>
 
     function save_chat(){
-    var database = firebase.database();
-    var ref = database.ref('chats');
-    var data= {
+    
+    /*db.collection('chats').add({
         MIS: 111715051,
-        Message: "aa gaya message",
+        Message: "fir aa gaya message",
         t2s: true,
         t_id: 101,
-        timestamp: 0
-            }
-    ref.push(data);
-    //console.log(ref);
-    console.log(data);
-    //console.log(ref);
+        timestamp: firebase.ServerValue.TIMESTAMP.toDate();
+    })
+    */
+    console.log(firebase.database.ServerValue.TIMESTAMP;
 }
 
     </script>   
