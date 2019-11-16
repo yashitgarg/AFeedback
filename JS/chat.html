@@ -17,49 +17,20 @@
     </div>
 
     <div>
-        <textarea rows="8" cols="100">
+        <textarea id = "msg" rows="8" cols="100">
 Enter your message here
 </textarea>
         <button onclick="save_chat()">Send</button>
     </div>
     
    <!--<script src="main.js"></script>-->
-   <!--<script src="index.js"></script>-->
-    <script>
-        //var email="test@test.com";
-    var qs = window.location.search;
-    var search_params = new URLSearchParams(qs);
-    var id = parseInt(search_params.get('id'));
-    
-
-
-    function save_chat(){
-    var email;
-    firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    email = user.email;
-  } else {
-    // No user is signed in.
-  }
-});
-    console.log(email); 
-    //console.log(id);
-    /*db.collection('chats').add({
-        MIS: 111715051,
-        Message: "fir aa gaya message",
-        t2s: true,
-        t_id: id,
-        timestamp: Date.now()
-    })
-    */
-    //var mystr=window.location
-    
-}
-
-    </script>   
-
+   <!--<script src="index.js"></script>--> 
+<script>
+    console.log(document.getElementById("test").value);
+</script>
     
     <script src="fireBase.js"></script>
     <script src="teachers.js"></script>
+    <script src="chat.js"></script>
 </body>
 </html>
