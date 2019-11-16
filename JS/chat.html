@@ -26,22 +26,32 @@ Enter your message here
    <!--<script src="main.js"></script>-->
    <!--<script src="index.js"></script>-->
     <script>
-
-    function save_chat(){
+        //var email="test@test.com";
     var qs = window.location.search;
     var search_params = new URLSearchParams(qs);
     var id = parseInt(search_params.get('id'));
-    //console.log(id);
+    
 
-    db.collection('chats').add({
-        MIS: user.MIS,
+
+    function save_chat(){
+    var email;
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    email = user.email;
+  } else {
+    // No user is signed in.
+  }
+});
+    console.log(email); 
+    //console.log(id);
+    /*db.collection('chats').add({
+        MIS: 111715051,
         Message: "fir aa gaya message",
         t2s: true,
         t_id: id,
-        timestamp: firebase.ServerValue.TIMESTAMP.toDate()
+        timestamp: Date.now()
     })
-    
-    //console.log(firebase.database.ServerValue.TIMESTAMP;
+    */
     //var mystr=window.location
     
 }
